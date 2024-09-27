@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DCF Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>DCF Results for {{ ticker }}</h1>
+        <p><strong>Revenue Growth:</strong> {{ metrics.revenue_growth | round(4) }}</p>
+        <p><strong>Operating Margin:</strong> {{ metrics.operating_margin | round(4) }}</p>
+        <p><strong>Working Capital:</strong> ${{ metrics.working_capital | round(2) }}</p>
+        <p><strong>Capital Expenditure:</strong> ${{ metrics.capex | round(2) }}</p>
+        <p><strong>Free Cash Flow Projections:</strong> {{ metrics.fcf_projections }}</p>
+        <p><strong>Present Value of Free Cash Flows:</strong> ${{ metrics.present_value_fcf | round(2) }}</p>
+        <p><strong>Present Value of Terminal Value:</strong> ${{ metrics.present_value_terminal | round(2) }}</p>
+        <p><strong>Enterprise Value:</strong> ${{ metrics.enterprise_value | round(2) }}</p>
+        <a href="/">Back to Input Form</a>
+    </div>
+</body>
+</html>

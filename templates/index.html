@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DCF Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Discounted Cash Flow Calculator</h1>
+        <form action="/" method="POST">
+            <label for="ticker">Ticker Symbol:</label>
+            <input type="text" id="ticker" name="ticker" required><br><br>
+            <label for="growth_rate">Growth Rate (in decimal):</label>
+            <input type="number" id="growth_rate" name="growth_rate" step="0.01" required><br><br>
+            <label for="discount_rate">Discount Rate (in decimal):</label>
+            <input type="number" id="discount_rate" name="discount_rate" step="0.01" required><br><br>
+            <label for="years">Number of Years:</label>
+            <input type="number" id="years" name="years" required><br><br>
+            <button type="submit">Calculate DCF</button>
+        </form>
+    </div>
+</body>
+</html>
